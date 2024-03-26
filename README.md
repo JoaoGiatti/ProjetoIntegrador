@@ -1,7 +1,7 @@
-# aula3
+# Projeto Integrador
 aula 3, 18/3/2024
-<h1 align="center">Aula 3 - João Giatti</h1>
-<p>Um repositório teste para o aprendizado de git, github e cronogramas no project libre.</p>
+<h1 align="center">Projeto Integrador - Eng. de Software</h1>
+<p>Um repositório teste para o aprendizado de git, github e cronogramas no project libre. E para gerenciamento dos arquivos do projeto integrador I.</p>
 <p>
 
 ## 🖥️ Tecnologias
