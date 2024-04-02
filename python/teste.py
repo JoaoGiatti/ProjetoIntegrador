@@ -42,14 +42,14 @@ print(f"H.Rentabilidade             {(PV-cp)-((PV*(cf/100))+((cv/100)*PV)+((iv/1
 lucroBruto = PV - cp
 lucro = (lucroBruto / cp) * 100
 
-if (lucro < 0):
+if (ml < 0):
     print("--- PREJUIZO ---\n")
-elif(lucro == 0):
+elif(ml == 0):
     print("--- EQUILÍBRIO ---\n")
-elif((lucro > 0) and (lucro <= 10)):
+elif((ml > 0) and (ml <= 10)):
     print("--- LUCRO BAIXO ---\n")
-elif((lucro > 10) and (lucro <= 20)):
+elif((ml > 10) and (ml <= 20)):
     print("--- LUCRO MÉDIO ---\n")
 else:
     print("--- LUCRO ALTO ---\n")
-print(f"O lucro do(a) {nome} é de {round(lucro, 2)}% (R${round(lucroBruto, 2)})\n")
+print(f"O lucro do(a) {nome} é de {round(ml, 2)}% (R${round(lucroBruto, 2)})\n")
