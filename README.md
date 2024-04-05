@@ -10,12 +10,15 @@ aula 3, 18/3/2024
 
   - Project Libre
   - Git e github
+  - Python
+  - Biblioteca Pandas
 
 </p>
 
 ## 🚀 Projeto
 
-  <img src="github.webp">
+  <img src="imagensREADME/github.webp">
+  <img src="imagensREADME/print.png">
 </p>
 <h2 align="center">
   Quer conversar comigo?
