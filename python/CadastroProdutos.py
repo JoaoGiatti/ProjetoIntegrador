@@ -38,30 +38,29 @@ print('''\n
 ================================================ 
 \n''')
 
-PV=cp/(1-((cf+cv+iv+ml)/100))
+PV=(cp*((cf+cv+iv+ml)//100))+(cp/(1-(((cf+cv+iv+ml)%100)/100)))
 print(f'''
 Descrição ----------------- Valor - % 
 A.Preço de venda            {round(PV,2)}   100%
-B.Custo de Aquisição        {round(cp,2)}   {(cp*100)/PV}%
-C.Receita Bruta             {round((PV-cp),2)}  {100-(cp*100)/PV}% 
+B.Custo de Aquisição        {round(cp,2)}   {round(((cp*100)/PV),2)}%
+C.Receita Bruta             {round((PV-cp),2)}  {round((100-(cp*100)/PV),2)}% 
 D.Custo fixo/Administrativo {round((PV*(cf/100)),2)}  {cf}%
 E.Comisão de vendas         {round(((cv/100)*PV),2)}  {cv}% 
 F.Impostos                  {round(PV*(iv/100),2)}  {iv}% 
 G.Outros custos             {round(((PV*(cf/100))+((cv/100)*PV)+((iv/100)*PV)),2)}  {cf+cv+iv}%
-H.Rentabilidade             {round((PV-cp)-((PV*(cf/100))+((cv/100)*PV)+((iv/100)*PV)),2)}  {ml}%\n
+H.Rentabilidade             {round((PV-cp)-((PV*(cf/100))+((cv/100)*PV)+((iv/100)*PV)),2)}  {round(((100-(cp*100)/PV) -(cf+cv+iv)),2)}%\n
 ''')
 
-lucroBruto = PV - cp
-lucro = (lucroBruto / cp) * 100
 
-if (ml < 0):
+
+if ((100-(cp*100)/PV) -(cf+cv+iv) < 0):
     print("------- PREJUIZO -------\n")
-elif(ml == 0):
+elif((100-(cp*100)/PV) -(cf+cv+iv) == 0):
     print("------- EQUILÍBRIO -------\n")
-elif((ml > 0) and (ml <= 10)):
+elif(((100-(cp*100)/PV) -(cf+cv+iv) > 0) and ((100-(cp*100)/PV) -(cf+cv+iv) <= 10)):
     print("------- LUCRO BAIXO -------\n")
-elif((ml > 10) and (ml <= 20)):
+elif(((100-(cp*100)/PV) -(cf+cv+iv) > 10) and ((100-(cp*100)/PV) -(cf+cv+iv) <= 20)):
     print("------- LUCRO MÉDIO -------\n")
 else:
     print("------- LUCRO ALTO -------\n")
-print(f"O lucro do(a) {nome} é de {round(ml, 2)}% (R${round((PV-cp)-((PV*(cf/100))+((cv/100)*PV)+((iv/100)*PV)),2)})\n")
+print(f"O lucro do(a) {nome} é de {round((100-(cp*100)/PV) -(cf+cv+iv), 2)}% (R${round((PV-cp)-((PV*(cf/100))+((cv/100)*PV)+((iv/100)*PV)),2)})\n")
